@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070b14">
+<title>Orbit Live</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<main class="wrap">
+  <nav class="nav"><a class="brand" href="/">◉ Orbit Live</a><div class="navlinks"><a href="/studio">Studio</a><a href="/watch">Nonton</a></div></nav>
+  <section id="home" class="view hidden">
+    <div class="hero"><div><div class="eyebrow">LIVE LANGSUNG DARI KAMERA</div><h1>Live kamera.<br>Tanpa login.</h1><p>Buka kamera HP atau laptop, mulai siaran, lalu bagikan link. Penonton cukup membuka link dan menonton langsung.</p><div class="actions"><a class="btn primary" href="/studio">📷 Mulai Live</a><a class="btn secondary" href="/watch">▶️ Tonton Live</a></div></div><div class="card preview"><div class="stage demo"><span class="livebadge">● LIVE</span><div class="cameraicon">📹</div></div></div></div>
+  </section>
+  <section id="studio" class="view hidden">
+    <div class="pagehead"><div><div class="eyebrow">CAMERA STUDIO</div><h1>Mulai siaran</h1></div><span id="hostState" class="pill">BELUM LIVE</span></div>
+    <div class="studioGrid">
+      <div class="card cameraCard"><div class="stage"><video id="preview" autoplay muted playsinline></video><div id="cameraPlaceholder" class="placeholder"><div>📷</div><b>Kamera belum aktif</b><span>Izinkan kamera & mikrofon</span></div><span id="liveBadge" class="livebadge hidden">● LIVE</span><span id="viewerBadge" class="viewerbadge hidden">👁 0</span></div><div class="controls"><button id="startCamera" class="round primary">📷</button><button id="toggleMic" class="round" disabled>🎙️</button><button id="flipCamera" class="round" disabled>🔄</button><button id="stopCamera" class="round danger" disabled>⏹</button></div></div>
+      <aside class="card panel"><label>Judul Live</label><input id="title" value="Live Kamera" maxlength="80"><button id="goLive" class="btn primary full" disabled>🔴 Mulai Live</button><div id="roomBox" class="share hidden"><small>KODE LIVE</small><strong id="roomCode">------</strong><label>Link penonton</label><div class="copyrow"><input id="shareLink" readonly><button id="copyLink" class="btn secondary">Copy</button></div><button id="endLive" class="btn danger full">Akhiri Live</button></div><p id="statusText" class="hint">Aktifkan kamera terlebih dahulu.</p></aside>
+    </div>
+  </section>
+  <section id="watch" class="view hidden">
+    <div class="pagehead"><div><div class="eyebrow">PENONTON</div><h1 id="watchTitle">Nonton Live</h1></div><span id="watchStatus" class="pill">MENUNGGU</span></div>
+    <div class="card player"><div class="stage watchstage"><video id="remoteVideo" autoplay playsinline controls></video><div id="waiting" class="placeholder"><div>📡</div><b id="waitingTitle">Menunggu live…</b><span id="waitingText">Masukkan kode live.</span></div><span id="watchLiveBadge" class="livebadge hidden">● LIVE</span></div></div>
+    <div class="card panel watchPanel"><label>Kode Live</label><input id="roomInput" placeholder="Contoh: AB12CD" maxlength="12" autocomplete="off"><button id="joinBtn" class="btn primary full">▶️ Tonton Live</button><p id="viewerError" class="error hidden"></p></div>
+  </section>
+  <footer>Orbit Live • WebRTC low-latency</footer>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
